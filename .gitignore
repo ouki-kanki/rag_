@@ -1,0 +1,17 @@
+# Virtual Environment
+env/
+
+# Data & Database storage (heavy files)
+data/
+vector_store/
+
+
+# Python compiled caching files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Operating system artifacts
+.DS_Store
+.thumbs
