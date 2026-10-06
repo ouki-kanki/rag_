@@ -20,3 +20,12 @@ def load_pdf_document(file_path: str | Path):
     loader = PyPDFLoader(str(path))
 
     # Load pages (returs a list of Document objects)
+    docs = loader.load()
+
+    print(f"[{path.name}] Successfully loaded {len(docs)} pages.")
+
+    return docs
+
+
+if __name__ == "__main__":
+    docs = load_pdf_document("../../data/raw/pdf/Pathfinder_Core_Rulebook.pdf")
