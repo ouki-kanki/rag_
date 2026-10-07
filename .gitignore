@@ -2,9 +2,9 @@
 env/
 
 # Data & Database storage (heavy files)
-data/
-vector_store/
-
+data/*
+database/*
+!database/README.md
 
 # Python compiled caching files
 __pycache__/
