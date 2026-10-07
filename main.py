@@ -6,6 +6,7 @@ from src.ingestion.inspector import (
     print_chunk_preview,
     print_chunk_summary,
 )
+from src.retrieval.retriever import build_retriever
 
 from vector_store.chroma_store import create_vector_store
 
@@ -19,9 +20,11 @@ def main():
     print_chunk_summary(chunks)
 
     vector_store = create_vector_store(chunks)
+    retriever = build_retriever(vector_store)
 
     # test the embedder and vector_db
-    results = vector_store.similarity_search("What is armor Class", k=3)
+    # results = vector_store.similarity_search("Tell me about the Wizard class", k=3)
+    results = retriever.invoke("Tell me about the wizard class")
 
     for i, doc in enumerate(results):
         print(f"\nResult #{i + 1}")
